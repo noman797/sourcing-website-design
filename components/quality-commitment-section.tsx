@@ -34,7 +34,7 @@ export default function QualityCommitmentSection() {
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+    <section className="py-8 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-20"></div>

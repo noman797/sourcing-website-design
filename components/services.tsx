@@ -44,7 +44,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden"
+      className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden"
     >
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20 -z-10"></div>

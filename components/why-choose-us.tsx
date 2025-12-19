@@ -36,7 +36,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section id="why-choose" className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">

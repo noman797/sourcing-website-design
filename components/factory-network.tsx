@@ -13,7 +13,7 @@ const factoryCategories = [
 
 export default function FactoryNetwork() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <div className="inline-block mb-4">

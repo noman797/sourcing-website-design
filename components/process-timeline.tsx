@@ -17,7 +17,7 @@ export default function ProcessTimeline() {
   return (
     <section
       id="process"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-white to-emerald-50"
+      className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-white to-emerald-50"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
