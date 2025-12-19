@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
   return (
     <section id="why-choose" className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4">
             <span className="px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
               Why Choose Us
@@ -50,13 +50,13 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, idx) => {
             const Icon = feature.icon
             return (
               <div
                 key={idx}
-                className="relative bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 group overflow-hidden"
+                className="relative bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 group overflow-hidden"
               >
                 {/* Transparent background pattern */}
                 <div className="absolute inset-0 opacity-5">
@@ -71,11 +71,11 @@ export default function WhyChooseUs() {
                 </div>
 
                 <div className="relative z-10">
-                  <div className="w-11 h-11 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Icon className="text-emerald-600" size={20} />
+                  <div className="w-9 h-9 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform">
+                    <Icon className="text-emerald-600" size={18} />
                   </div>
-                  <h3 className="text-base font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1.5">{feature.title}</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">{feature.description}</p>
                 </div>
               </div>
             )

@@ -32,19 +32,23 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
-            <a
-              href="#contact"
-              className="px-6 py-2.5 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition text-sm font-semibold"
-            >
-              Factory Please Contact
-            </a>
+        <div className="flex items-center gap-4">
+  <a
+    href="#contact"
+    className="hidden md:inline-flex px-6 py-2.5 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition text-sm font-semibold"
+  >
+    Factory Please Contact
+  </a>
 
-            {/* Mobile Menu Button */}
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-700">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+  {/* Mobile Menu Button */}
+  <button
+    onClick={() => setIsOpen(!isOpen)}
+    className="md:hidden text-gray-700"
+  >
+    {isOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
+</div>
+
         </div>
 
         {isOpen && (

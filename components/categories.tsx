@@ -71,7 +71,7 @@ export default function Categories() {
     <section id="categories" className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4">
             <span className="px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
               Our Expertise

@@ -42,7 +42,7 @@ export default function QualityCommitmentSection() {
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4 px-4 py-2 bg-emerald-100 rounded-full">
             <span className="text-emerald-700 font-semibold text-sm">Quality Assurance</span>
           </div>
@@ -56,27 +56,27 @@ export default function QualityCommitmentSection() {
         </div>
 
         {/* Quality Points Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {qualityPoints.map((point, idx) => {
             const Icon = point.icon
             return (
               <div
                 key={idx}
-                className="group relative flex gap-5 p-6 rounded-2xl bg-white border-2 border-slate-200 hover:border-emerald-400 hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
+                className="group relative flex gap-4 p-4 rounded-lg bg-white border-2 border-slate-200 hover:border-emerald-400 hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
               >
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-sm font-bold text-slate-900 mb-1.5 group-hover:text-emerald-700 transition-colors">
                     {point.title}
                   </h3>
-                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors text-sm leading-relaxed">
+                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors text-xs leading-relaxed">
                     {point.description}
                   </p>
                 </div>

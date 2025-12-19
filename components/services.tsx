@@ -51,7 +51,7 @@ export default function Services() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-20 -z-10"></div>
 
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4 px-4 py-2 bg-emerald-100 rounded-full">
             <span className="text-emerald-700 font-semibold text-sm">Our Expertise</span>
           </div>
@@ -63,13 +63,13 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => {
             const Icon = service.icon
             return (
               <div
                 key={idx}
-                className="group relative p-5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-300 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                className="group relative p-4 rounded-lg bg-white border border-slate-200 hover:border-emerald-300 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
               >
                 {/* Gradient overlay on hover */}
                 <div
@@ -77,14 +77,14 @@ export default function Services() {
                 ></div>
 
                 <div
-                  className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}
+                  className={`w-9 h-9 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-2.5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}
                 >
-                  <Icon className="text-white" size={22} />
+                  <Icon className="text-white" size={18} />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-sm font-bold text-slate-900 mb-1.5 group-hover:text-emerald-700 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 text-sm group-hover:text-slate-700 transition-colors leading-relaxed">
+                <p className="text-slate-600 text-xs group-hover:text-slate-700 transition-colors leading-relaxed">
                   {service.description}
                 </p>
               </div>

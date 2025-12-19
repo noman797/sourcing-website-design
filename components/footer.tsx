@@ -1,5 +1,5 @@
 "use client"
-import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -9,19 +9,21 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src="/images/image.png" alt="Third Eye Sourcing" className="h-10 w-auto" />
+            <div className="mb-4">
+              <img src="/images/image.png" alt="Third Eye Sourcing" className="h-12 w-auto" />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Your trusted partner for global product sourcing, development, and quality assurance from Bangladesh.
+            <p className="text-gray-400 text-sm leading-relaxed text-justify">
+               Delivering world-class Product Sourcing, Development, and Quality Assurance for global buyers in hard goods,
+          textiles, and lifestyle products.
             </p>
-            <div className="mt-4 flex items-center gap-2">
-              <img
-                src="/images/bangladesh-flag.jpg"
-                alt="Made in Bangladesh"
-                className="h-6 w-auto rounded shadow-sm"
-              />
-              <span className="text-sm text-gray-400">Made in Bangladesh</span>
+            <div className="mt-6 flex items-center gap-3 bg-gray-800 p-3 rounded-lg">
+              <div className="w-12 h-8 rounded overflow-hidden shadow-md flex-shrink-0">
+                <svg viewBox="0 0 120 72" className="w-full h-full">
+                  <rect width="120" height="72" fill="#006a4e"/>
+                  <circle cx="56" cy="36" r="20" fill="#f42a41"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium text-gray-300">Made in Bangladesh</span>
             </div>
           </div>
 
@@ -62,18 +64,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-400 transition">
-                  Our Team
+                <a href="#services" className="hover:text-green-400 transition">
+                  Core Services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-400 transition">
-                  Our Factories
+                <a href="#products" className="hover:text-green-400 transition">
+                  Products
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-400 transition">
-                  Blog
+                <a href="#strength" className="hover:text-green-400 transition">
+                  Strength
                 </a>
               </li>
             </ul>
@@ -100,33 +102,28 @@ export default function Footer() {
                 <span>Dhaka, Bangladesh</span>
               </li>
             </ul>
+            
+            {/* Social Icons */}
+            <div className="flex gap-3 mt-6">
+              <a
+                href="#"
+                className="w-9 h-9 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition"
+              >
+                <Facebook size={16} />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition"
+              >
+                <Linkedin size={16} />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 sm:mb-0">© 2025 Third Eye Sourcing. All rights reserved.</p>
-
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition"
-            >
-              <Linkedin size={18} />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition"
-            >
-              <Facebook size={18} />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition"
-            >
-              <Twitter size={18} />
-            </a>
-          </div>
+        {/* Copyright */}
+        <div className="border-t border-gray-800 pt-4 text-center">
+          <p className="text-gray-500 text-sm">© 2025 Third Eye Sourcing. All rights reserved.</p>
         </div>
       </div>
     </footer>

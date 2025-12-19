@@ -33,7 +33,7 @@ export default function Values() {
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Our Values</h2>
           <p className="text-lg text-gray-600">The principles that guide everything we do</p>
         </div>

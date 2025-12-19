@@ -39,7 +39,7 @@ export default function SustainabilitySection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4 px-4 py-2 bg-emerald-100 rounded-full">
             <span className="text-emerald-700 font-semibold text-sm">Responsibility</span>
           </div>
@@ -51,30 +51,30 @@ export default function SustainabilitySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {initiatives.map((initiative, idx) => {
             const Icon = initiative.icon
             return (
               <div
                 key={idx}
-                className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100 hover:border-emerald-300 overflow-hidden"
+                className="group relative bg-white rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100 hover:border-emerald-300 overflow-hidden"
               >
                 {/* Animated background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-                      <Icon className="w-6 h-6 text-white" />
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-3xl font-bold text-emerald-100 group-hover:text-emerald-300 transition-colors">
+                    <span className="text-2xl font-bold text-emerald-100 group-hover:text-emerald-300 transition-colors">
                       {initiative.number}
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-sm font-bold text-slate-900 mb-1.5 group-hover:text-emerald-700 transition-colors">
                     {initiative.title}
                   </h3>
-                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors text-sm leading-relaxed">
+                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors text-xs leading-relaxed">
                     {initiative.description}
                   </p>
                 </div>

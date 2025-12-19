@@ -15,7 +15,7 @@ export default function FactoryNetwork() {
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4">
             <span className="px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
               Our Network
@@ -28,15 +28,15 @@ export default function FactoryNetwork() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {factoryCategories.map((category, idx) => (
             <div
               key={idx}
-              className="group bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 text-center"
+              className="group bg-gradient-to-br from-white to-gray-50 p-3 rounded-lg border border-gray-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 text-center"
             >
-              <div className="text-4xl mb-3 transform group-hover:scale-125 transition-transform">{category.icon}</div>
-              <h3 className="text-base font-bold text-gray-900 mb-2">{category.name}</h3>
-              <div className="text-3xl font-bold text-emerald-600 mb-1">{category.count}</div>
+              <div className="text-3xl mb-2 transform group-hover:scale-125 transition-transform">{category.icon}</div>
+              <h3 className="text-sm font-bold text-gray-900 mb-1.5">{category.name}</h3>
+              <div className="text-2xl font-bold text-emerald-600 mb-0.5">{category.count}</div>
               <p className="text-xs text-gray-600">partner factories</p>
             </div>
           ))}

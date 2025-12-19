@@ -38,7 +38,7 @@ export default function Strengths() {
   return (
     <section id="strength" className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4">
             <span className="px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
               Our Capabilities
@@ -50,13 +50,13 @@ export default function Strengths() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {strengths.map((strength, idx) => {
             const Icon = strength.icon
             return (
               <div
                 key={idx}
-                className="relative p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 hover:border-emerald-500 hover:shadow-lg transition group overflow-hidden"
+                className="relative p-4 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-100 hover:border-emerald-500 hover:shadow-lg transition group overflow-hidden"
               >
                 <div className="absolute inset-0 opacity-5">
                   <div
@@ -70,11 +70,11 @@ export default function Strengths() {
                 </div>
 
                 <div className="relative z-10">
-                  <div className="w-11 h-11 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center mb-3 group-hover:from-emerald-200 transition">
-                    <Icon className="text-emerald-600" size={20} />
+                  <div className="w-9 h-9 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center mb-2.5 group-hover:from-emerald-200 transition">
+                    <Icon className="text-emerald-600" size={18} />
                   </div>
-                  <h3 className="text-base font-semibold text-gray-900 mb-2">{strength.title}</h3>
-                  <p className="text-gray-600 text-sm">{strength.description}</p>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1.5">{strength.title}</h3>
+                  <p className="text-gray-600 text-xs">{strength.description}</p>
                 </div>
               </div>
             )
