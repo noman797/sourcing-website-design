@@ -7,7 +7,7 @@ export default function FloatingContactBadge() {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleWhatsApp = () => {
-    const phoneNumber = "8801888606797"
+    const phoneNumber = "8801719160285"
     window.open(`https://wa.me/${phoneNumber}`, "_blank")
   }
 

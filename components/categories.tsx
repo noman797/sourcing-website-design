@@ -19,12 +19,12 @@ const categories = [
   },
   {
     name: "Bags & Luggage",
-    image: "/bags-luggage-travel-collection.jpg",
+    image: "/bags-luggage-travel-collection.png",
     desc: "Durable and stylish bags for all occasions",
   },
   {
     name: "Campaign Items",
-    image: "/promotional-merchandise-campaign-items-gifts.jpg",
+    image: "/promotional-merchandise-campaign-items-gifts.png",
     desc: "Custom promotional and branded items",
   },
   {
@@ -34,22 +34,22 @@ const categories = [
   },
   {
     name: "Apparel",
-    image: "/quality-apparel-clothing-collection.jpg",
+    image: "/quality-apparel-clothing-collection.avif",
     desc: "Premium quality clothing and fabrics",
   },
   {
     name: "Cleaning Items",
-    image: "/cleaning-supplies-brushes-tools.jpg",
+    image: "/cleaning-supplies-brushes-tools.avif",
     desc: "Professional cleaning tools and supplies",
   },
   {
     name: "Toys",
-    image: "/safe-toys-children-educational-play.jpg",
+    image: "/safe-toys-children-educational-play.avif",
     desc: "Safe and quality toys for all ages",
   },
   {
     name: "Stationery",
-    image: "/premium-stationery-office-supplies.jpg",
+    image: "/premium-stationery-office-supplies.avif",
     desc: "High-quality office and school supplies",
   },
   {
