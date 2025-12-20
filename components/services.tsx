@@ -115,14 +115,6 @@ export default function Services() {
             transform: translateY(-10px);
           }
         }
-        @keyframes shine {
-          0% {
-            background-position: -200% center;
-          }
-          100% {
-            background-position: 200% center;
-          }
-        }
       `}</style>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -144,7 +136,7 @@ export default function Services() {
             return (
               <div
                 key={idx}
-                className={`group relative p-4 rounded-lg border border-slate-200 hover:border-green-400 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer ${
+                className={`relative p-4 rounded-lg border border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden ${
                   isVisible ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-3'
                 }`}
                 style={{ 
@@ -154,55 +146,20 @@ export default function Services() {
                   animationDelay: `${idx * 0.3}s`
                 }}
               >
-                {/* Gradient overlay on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: 'linear-gradient(135deg, #99FFDD 0%, #B3FFE6 100%)' }}
-                ></div>
-
-                {/* Animated shine effect on hover */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)',
-                    backgroundSize: '200% 100%',
-                    animation: 'shine 2s infinite'
-                  }}
-                ></div>
-
-                {/* Pulsing glow */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 animate-pulse"
-                  style={{ background: '#00ff99' }}
-                ></div>
-
-                {/* Corner accents */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-white opacity-0 group-hover:w-10 group-hover:h-10 group-hover:opacity-60 transition-all duration-500"></div>
-                <div className="absolute bottom-0 left-0 w-0 h-0 border-b-2 border-l-2 border-white opacity-0 group-hover:w-10 group-hover:h-10 group-hover:opacity-60 transition-all duration-500"></div>
-
                 <div className="relative z-10">
                   <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center mb-2.5 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg transition-all duration-300"
-                    style={{ background: 'linear-gradient(135deg, #009966 0%, #00cc88 100%)' }}
+                    className="w-9 h-9 rounded-lg flex items-center justify-center mb-2.5 transition-all duration-300"
+                    style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
                   >
                     <Icon className="text-white" size={18} />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-1.5 group-hover:text-white transition-colors">
+                  <h3 className="text-sm font-bold text-white mb-1.5">
                     {service.title}
                   </h3>
-                  <p className="text-white text-xs group-hover:text-white transition-colors leading-relaxed">
+                  <p className="text-white text-xs leading-relaxed">
                     {service.description}
                   </p>
                 </div>
-
-                {/* Bottom line animation */}
-                <div 
-                  className="absolute bottom-0 left-0 w-0 h-1 group-hover:w-full transition-all duration-700"
-                  style={{ 
-                    background: 'linear-gradient(90deg, #ffffff, #e0e0e0)',
-                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
-                  }}
-                ></div>
               </div>
             )
           })}

@@ -53,15 +53,6 @@ export default function Strengths() {
           }
         }
         
-        @keyframes shine {
-          0% {
-            background-position: -200% center;
-          }
-          100% {
-            background-position: 200% center;
-          }
-        }
-        
         @keyframes float {
           0%, 100% {
             transform: translateY(0px);
@@ -126,63 +117,22 @@ export default function Strengths() {
               return (
                 <div
                   key={idx}
-                  className="relative p-4 rounded-lg backdrop-blur-sm border border-gray-200 hover:border-green-500 hover:shadow-2xl transition-all duration-500 group overflow-hidden cursor-pointer hover:scale-105"
+                  className="relative p-4 rounded-lg backdrop-blur-sm border border-gray-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
                   style={{
                     background: '#009966',
                     animation: 'float 6s ease-in-out infinite',
                     animationDelay: `${idx * 0.2}s`
                   }}
                 >
-                  {/* Animated gradient overlay */}
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{
-                      background: 'linear-gradient(135deg, #99FFDD 0%, #B3FFE6 100%)',
-                    }}
-                  ></div>
-
-                  {/* Pulsing glow effect */}
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500 animate-pulse"
-                    style={{ background: '#00ff99' }}
-                  ></div>
-
-                  {/* Animated shine effect */}
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
-                      backgroundSize: '200% 100%',
-                      animation: 'shine 2s infinite'
-                    }}
-                  ></div>
-
-                  {/* Floating particles effect */}
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                    <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full animate-ping"></div>
-                    <div className="absolute top-8 right-6 w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-white rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-                  </div>
-
-                  {/* Corner accents */}
-                  <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-white opacity-0 group-hover:w-12 group-hover:h-12 group-hover:opacity-50 transition-all duration-500"></div>
-                  <div className="absolute bottom-0 left-0 w-0 h-0 border-b-2 border-l-2 border-white opacity-0 group-hover:w-12 group-hover:h-12 group-hover:opacity-50 transition-all duration-500"></div>
-
                   <div className="relative z-10">
                     <div 
-                      className="w-9 h-9 bg-white/40 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2.5 group-hover:bg-white/60 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg"
+                      className="w-9 h-9 bg-white/40 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2.5 transition-all duration-500 shadow-lg"
                     >
-                      <Icon className="text-green-700 group-hover:scale-110 transition-transform duration-500" size={18} />
+                      <Icon className="text-green-700 transition-transform duration-500" size={18} />
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-1.5 group-hover:translate-x-1 transition-transform duration-300">{strength.title}</h3>
-                    <p className="text-white text-xs leading-relaxed group-hover:text-white transition-colors duration-300">{strength.description}</p>
+                    <h3 className="text-sm font-semibold text-white mb-1.5 transition-transform duration-300">{strength.title}</h3>
+                    <p className="text-white text-xs leading-relaxed transition-colors duration-300">{strength.description}</p>
                   </div>
-
-                  {/* Bottom line animation */}
-                  <div 
-                    className="absolute bottom-0 left-0 w-0 h-1 bg-white group-hover:w-full transition-all duration-700 shadow-lg"
-                    style={{ boxShadow: '0 0 10px rgba(255,255,255,0.5)' }}
-                  ></div>
                 </div>
               )
             })}

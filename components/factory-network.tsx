@@ -50,15 +50,6 @@ export default function FactoryNetwork() {
           }
         }
         
-        @keyframes shine {
-          0% {
-            background-position: -200% center;
-          }
-          100% {
-            background-position: 200% center;
-          }
-        }
-        
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
@@ -103,54 +94,19 @@ export default function FactoryNetwork() {
             {factoryCategories.map((category, idx) => (
               <div
                 key={idx}
-                className="group relative p-3 rounded-lg border border-gray-200 hover:border-green-400 hover:shadow-2xl transition-all duration-500 text-center animate-fadeInUp overflow-hidden cursor-pointer"
+                className="relative p-3 rounded-lg border border-gray-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 text-center animate-fadeInUp overflow-hidden cursor-pointer"
                 style={{ 
                   animationDelay: `${idx * 0.1}s`,
                   background: '#009966',
                   animation: `fadeInUp 0.6s ease-out forwards ${idx * 0.1}s, float-card 6s ease-in-out infinite ${idx * 0.3}s`
                 }}
               >
-                {/* Gradient overlay on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: 'linear-gradient(135deg, #99FFDD 0%, #B3FFE6 100%)' }}
-                ></div>
-
-                {/* Shine effect */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%)',
-                    backgroundSize: '200% 100%',
-                    animation: 'shine 2s infinite'
-                  }}
-                ></div>
-
-                {/* Pulsing glow */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 animate-pulse"
-                  style={{ background: '#00ff99' }}
-                ></div>
-
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-0 h-0 border-t-2 border-l-2 border-white opacity-0 group-hover:w-8 group-hover:h-8 group-hover:opacity-60 transition-all duration-500"></div>
-                <div className="absolute bottom-0 right-0 w-0 h-0 border-b-2 border-r-2 border-white opacity-0 group-hover:w-8 group-hover:h-8 group-hover:opacity-60 transition-all duration-500"></div>
-
                 <div className="relative z-10">
-                  <div className="text-3xl mb-2 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{category.icon}</div>
-                  <h3 className="text-sm font-bold text-white mb-1.5 group-hover:text-white transition-colors duration-300">{category.name}</h3>
+                  <div className="text-3xl mb-2 transition-all duration-300">{category.icon}</div>
+                  <h3 className="text-sm font-bold text-white mb-1.5 transition-colors duration-300">{category.name}</h3>
                   <div className="text-2xl font-bold mb-0.5 transition-all duration-300 text-white">{category.count}</div>
-                  <p className="text-xs text-white group-hover:text-white transition-colors duration-300">partner factories</p>
+                  <p className="text-xs text-white transition-colors duration-300">partner factories</p>
                 </div>
-
-                {/* Bottom line animation */}
-                <div 
-                  className="absolute bottom-0 left-0 w-0 h-1 group-hover:w-full transition-all duration-700"
-                  style={{ 
-                    background: 'linear-gradient(90deg, #ffffff, #e0e0e0)',
-                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
-                  }}
-                ></div>
               </div>
             ))}
           </div>

@@ -67,11 +67,11 @@ export default function WhyChooseUs() {
       className="py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
         background: `
-          radial-gradient(circle at top left, #009966 0%, transparent 40%),
-          radial-gradient(circle at top right, #007755 0%, transparent 40%),
-          radial-gradient(circle at bottom left, #00aa77 0%, transparent 40%),
-          radial-gradient(circle at bottom right, #008855 0%, transparent 40%),
-          #ffffff
+          radial-gradient(circle at top left, #009966 0%, #00aa88 50%),
+          radial-gradient(circle at top right, #007755 0%, #009977 50%),
+          radial-gradient(circle at bottom left, #00aa77 0%, #00bb99 50%),
+          radial-gradient(circle at bottom right, #008855 0%, #00aa88 50%),
+          #00aa88
         `
       }}
     >
@@ -125,10 +125,10 @@ export default function WhyChooseUs() {
               Why Choose Us
             </span>
           </div>
-          <h2 className={`text-4xl sm:text-5xl font-bold text-gray-900 mb-4 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+          <h2 className={`text-4xl sm:text-5xl font-bold text-white mb-4 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
             Your Trusted Sourcing Partner
           </h2>
-          <p className={`text-lg text-gray-600 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+          <p className={`text-lg text-white max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
             We deliver excellence through expertise, reliability, and commitment to your success
           </p>
         </div>

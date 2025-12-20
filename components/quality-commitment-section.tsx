@@ -65,15 +65,6 @@ export default function QualityCommitmentSection() {
           }
         }
         
-        @keyframes shine {
-          0% {
-            background-position: -200% center;
-          }
-          100% {
-            background-position: 200% center;
-          }
-        }
-        
         .animate-blob {
           animation: blob 7s infinite;
         }
@@ -144,66 +135,29 @@ export default function QualityCommitmentSection() {
             return (
               <div
                 key={idx}
-                className="group relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-400 hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
+                className="relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
                 style={{
                   background: '#009966',
                   animation: 'float-card 6s ease-in-out infinite',
                   animationDelay: `${idx * 0.2}s`
                 }}
               >
-                {/* Animated gradient overlay on hover */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'linear-gradient(135deg, #99FFDD 0%, #B3FFE6 100%)',
-                  }}
-                ></div>
-
-                {/* Shine effect */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)',
-                    backgroundSize: '200% 100%',
-                    animation: 'shine 2s infinite'
-                  }}
-                ></div>
-
-                {/* Pulsing glow */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 animate-pulse"
-                  style={{ background: '#00ff99' }}
-                ></div>
-
-                {/* Corner accents */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-green-600 opacity-0 group-hover:w-10 group-hover:h-10 group-hover:opacity-60 transition-all duration-500"></div>
-                <div className="absolute bottom-0 left-0 w-0 h-0 border-b-2 border-l-2 border-green-600 opacity-0 group-hover:w-10 group-hover:h-10 group-hover:opacity-60 transition-all duration-500"></div>
-
                 <div className="flex-shrink-0 relative z-10">
                   <div 
-                    className="w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-xl transition-all duration-300"
-                    style={{ background: 'linear-gradient(135deg, #009966 0%, #00cc88 100%)' }}
+                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+                    style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
                   >
                     <Icon className="w-5 h-5 text-white" />
                   </div>
                 </div>
                 <div className="flex-1 relative z-10">
-                  <h3 className="text-sm font-bold text-white mb-1.5 group-hover:text-white transition-colors">
+                  <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
                     {point.title}
                   </h3>
-                  <p className="text-white group-hover:text-white transition-colors text-xs leading-relaxed">
+                  <p className="text-white transition-colors text-xs leading-relaxed">
                     {point.description}
                   </p>
                 </div>
-
-                {/* Bottom line animation */}
-                <div 
-                  className="absolute bottom-0 left-0 w-0 h-1 group-hover:w-full transition-all duration-700"
-                  style={{ 
-                    background: 'linear-gradient(90deg, #009966, #00cc88)',
-                    boxShadow: '0 0 10px rgba(0, 153, 102, 0.5)'
-                  }}
-                ></div>
               </div>
             )
           })}
