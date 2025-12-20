@@ -117,7 +117,7 @@ export default function Strengths() {
               return (
                 <div
                   key={idx}
-                  className="relative p-4 rounded-lg backdrop-blur-sm border border-gray-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
+                  className="group relative p-6 rounded-xl backdrop-blur-sm border border-gray-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
                   style={{
                     background: '#009966',
                     animation: 'float 6s ease-in-out infinite',
@@ -126,12 +126,12 @@ export default function Strengths() {
                 >
                   <div className="relative z-10">
                     <div 
-                      className="w-9 h-9 bg-white/40 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2.5 transition-all duration-500 shadow-lg"
+                      className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-3 transition-all duration-500 shadow-md group-hover:scale-110 group-hover:bg-white/30"
                     >
-                      <Icon className="text-green-700 transition-transform duration-500" size={18} />
+                      <Icon className="text-white" size={24} strokeWidth={2} />
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-1.5 transition-transform duration-300">{strength.title}</h3>
-                    <p className="text-white text-xs leading-relaxed transition-colors duration-300">{strength.description}</p>
+                    <h3 className="text-base font-bold text-white mb-2 transition-transform duration-300">{strength.title}</h3>
+                    <p className="text-white/90 text-sm leading-relaxed transition-colors duration-300">{strength.description}</p>
                   </div>
                 </div>
               )
