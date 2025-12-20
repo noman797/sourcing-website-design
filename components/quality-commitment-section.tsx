@@ -3,6 +3,17 @@
 import { CheckCircle, Users, Target, Shield, FileCheck } from "lucide-react"
 
 export default function QualityCommitmentSection() {
+  // Add background animation styles only
+  const backgroundStyles = `
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.2; }
+      50% { transform: scale(1.1); opacity: 0.3; }
+    }
+    .animate-pulse-slow {
+      animation: pulse 6s ease-in-out infinite;
+    }
+  `
+
   const qualityPoints = [
     {
       icon: Shield,
@@ -35,9 +46,10 @@ export default function QualityCommitmentSection() {
 
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+      <style>{backgroundStyles}</style>
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-100 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '3s' }}></div>
       </div>
 
       <div className="max-w-6xl mx-auto">

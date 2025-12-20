@@ -7,8 +7,8 @@ export default function Hero() {
     "/factory-team-2.jpg",
     "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&h=700&fit=crop",
     "/factory-team-5.jpg",
-    "/factory-team-3.jpg",,
-    "https://images.unsplash.com/photo-1611250396725-294c6af32fdd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/factory-team-3.jpg",
+    "/factory-team-6.jpg",
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)

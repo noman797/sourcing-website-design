@@ -3,6 +3,17 @@
 import { Leaf, Users, Award, Zap } from "lucide-react"
 
 export default function SustainabilitySection() {
+  // Add floating animation styles
+  const floatingStyles = `
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+  `
+
   const initiatives = [
     {
       icon: Zap,
@@ -32,6 +43,7 @@ export default function SustainabilitySection() {
 
   return (
     <section className="py-8 bg-gradient-to-b from-emerald-50 via-white to-teal-50 relative overflow-hidden">
+      <style>{floatingStyles}</style>
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200 rounded-full blur-3xl opacity-20"></div>
@@ -57,7 +69,10 @@ export default function SustainabilitySection() {
             return (
               <div
                 key={idx}
-                className="group relative bg-white rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100 hover:border-emerald-300 overflow-hidden"
+                className="group relative bg-white rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100 hover:border-emerald-300 overflow-hidden animate-float"
+                style={{
+                  animationDelay: `${idx * 0.2}s`
+                }}
               >
                 {/* Animated background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
