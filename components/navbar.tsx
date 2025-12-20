@@ -59,7 +59,7 @@ export default function Navbar() {
             <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">
               Core Service
             </a>
-            <a href="#products" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">
+            <a href="#categories" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">
               Products
             </a>
             <a href="#strength" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">

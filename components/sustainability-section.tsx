@@ -42,7 +42,7 @@ export default function SustainabilitySection() {
   ]
 
   return (
-    <section className="py-8 bg-gradient-to-b from-emerald-50 via-white to-teal-50 relative overflow-hidden">
+    <section id="sustainability" className="py-8 bg-gradient-to-b from-emerald-50 via-white to-teal-50 relative overflow-hidden">
       <style>{floatingStyles}</style>
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20"></div>
@@ -69,27 +69,28 @@ export default function SustainabilitySection() {
             return (
               <div
                 key={idx}
-                className="group relative bg-white rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100 hover:border-emerald-300 overflow-hidden animate-float"
+                className="group relative rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-100 hover:border-emerald-300 overflow-hidden animate-float"
                 style={{
+                  background: '#009966',
                   animationDelay: `${idx * 0.2}s`
                 }}
               >
                 {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-9 h-9 rounded-lg bg-white/30 flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-2xl font-bold text-emerald-100 group-hover:text-emerald-300 transition-colors">
+                    <span className="text-2xl font-bold text-white/40 group-hover:text-white/60 transition-colors">
                       {initiative.number}
                     </span>
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 mb-1.5 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-sm font-bold text-white mb-1.5 group-hover:text-white transition-colors">
                     {initiative.title}
                   </h3>
-                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors text-xs leading-relaxed">
+                  <p className="text-white group-hover:text-white transition-colors text-xs leading-relaxed">
                     {initiative.description}
                   </p>
                 </div>

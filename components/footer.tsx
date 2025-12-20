@@ -12,15 +12,16 @@ export default function Footer() {
             <div className="mb-4">
               <img src="/images/image.png" alt="Third Eye Sourcing" className="h-12 w-auto" />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed text-justify">
-               Delivering world-class Product Sourcing, Development, and Quality Assurance for global buyers in hard goods,
-          textiles, and lifestyle products.
+            <p className="text-gray-400 text-sm leading-snug tracking-tight">
+              Delivering world-class Product Sourcing, Development, and Quality Assurance for global buyers in hard goods,
+              textiles, and lifestyle products.
             </p>
+
             <div className="mt-6 flex items-center gap-3 bg-gray-800 p-3 rounded-lg">
               <div className="w-12 h-8 rounded overflow-hidden shadow-md flex-shrink-0">
                 <svg viewBox="0 0 120 72" className="w-full h-full">
-                  <rect width="120" height="72" fill="#006a4e"/>
-                  <circle cx="56" cy="36" r="20" fill="#f42a41"/>
+                  <rect width="120" height="72" fill="#006a4e" />
+                  <circle cx="56" cy="36" r="20" fill="#f42a41" />
                 </svg>
               </div>
               <span className="text-sm font-medium text-gray-300">Made in Bangladesh</span>
@@ -32,22 +33,12 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-green-400 transition">
+                <a href="#products" className="hover:text-green-400 transition">
                   Product Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-400 transition">
-                  Quality Control
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-400 transition">
-                  Compliance
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-400 transition">
+                <a href="#sustainability" className="hover:text-green-400 transition">
                   Sustainability
                 </a>
               </li>
@@ -59,7 +50,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-green-400 transition">
+                <a href="#about" className="hover:text-green-400 transition">
                   About Us
                 </a>
               </li>
@@ -88,13 +79,13 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-green-500" />
                 <a href="mailto:info@thirdeyesourcing.com" className="hover:text-green-400 transition">
-                 Info@thirdeyeaourcing.com
+                  Info@thirdeyeaourcing.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-green-500" />
                 <a href="tel:+880 1788-683039 " className="hover:text-green-400 transition">
-                  @+880 1788-683039  
+                  @+880 1788-683039
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -102,7 +93,7 @@ export default function Footer() {
                 <span>Dhaka, Bangladesh</span>
               </li>
             </ul>
-            
+
             {/* Social Icons */}
             <div className="flex gap-3 mt-6">
               <a

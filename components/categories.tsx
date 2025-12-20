@@ -68,17 +68,35 @@ export default function Categories() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="categories" className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-6xl mx-auto">
+    <section 
+      id="products" 
+      className="py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      style={{
+        background: 'radial-gradient(ellipse at center top, #00cc88 0%, #009966 40%, #006644 100%)'
+      }}
+    >
+      {/* Animated background blur effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div 
+          className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-30 blur-3xl"
+          style={{ background: '#00ff99' }}
+        ></div>
+        <div 
+          className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl"
+          style={{ background: '#004433' }}
+        ></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-block mb-4">
-            <span className="px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+            <span className="px-4 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm font-semibold backdrop-blur-sm">
               Our Expertise
             </span>
           </div>
-          <h2 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 font-serif">Product Categories</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6 font-serif">Product Categories</h2>
+          <p className="text-xl text-white text-opacity-90 max-w-3xl mx-auto">
             We specialize in 20+ product categories with proven sourcing capabilities across multiple industries
           </p>
         </div>
@@ -95,18 +113,18 @@ export default function Categories() {
                 src={category.image || "/placeholder.svg"}
                 alt={category.name}
                 loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-120 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 onError={(e) => {
                   e.currentTarget.src = "/placeholder.svg?height=400&width=500"
                 }}
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-green-900/95 via-green-600/50 to-transparent flex flex-col justify-end p-6 group-hover:from-green-900/100 group-hover:via-green-700/60 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-800/50 to-transparent flex flex-col justify-end p-6 group-hover:from-green-900/100 group-hover:via-green-700/60 transition-all duration-300">
                 <h3 className="text-white font-bold text-xl mb-2 transform group-hover:translate-y-0 translate-y-1">
                   {category.name}
                 </h3>
-                <p className="text-green-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {category.desc}
                 </p>
               </div>
