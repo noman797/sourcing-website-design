@@ -9,11 +9,11 @@ const categories = [
   },
   {
     name: "Basket & Storage",
-    image: "/woven-basket-storage-organization-home.jpg",
+    image: "/basket.png",
     desc: "Handcrafted baskets and storage solutions",
   },
   {
-    name: "Tableware",
+    name: "Ceramic & porcelain",
     image: "/premium-tableware-ceramic-dishes.jpg",
     desc: "Fine dining and casual tableware",
   },
@@ -23,12 +23,12 @@ const categories = [
     desc: "Durable and stylish bags for all occasions",
   },
   {
-    name: "Campaign Items",
-    image: "/promotional-merchandise-campaign-items-gifts.png",
-    desc: "Custom promotional and branded items",
+    name: "Cotton Made",
+    image: "/twal.png",
+    desc: "Cotton bag, Towel, Kitchen apron",
   },
   {
-    name: "Jute Products",
+    name: "Jute diversified products",
     image: "/natural-jute-eco-friendly-sustainable-products.jpg",
     desc: "Eco-friendly natural jute products",
   },
@@ -38,13 +38,13 @@ const categories = [
     desc: "Premium quality clothing and fabrics",
   },
   {
-    name: "Cleaning Items",
+    name: "Cleaning Accessories",
     image: "/cleaning-supplies-brushes-tools.avif",
     desc: "Professional cleaning tools and supplies",
   },
   {
     name: "Toys",
-    image: "/safe-toys-children-educational-play.avif",
+    image: "/safe-toys-children-educational-play.jpg",
     desc: "Safe and quality toys for all ages",
   },
   {
@@ -68,8 +68,8 @@ export default function Categories() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section 
-      id="products" 
+    <section
+      id="products"
       className="py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
         background: 'radial-gradient(ellipse at center top, #00cc88 0%, #009966 40%, #006644 100%)'
@@ -77,11 +77,11 @@ export default function Categories() {
     >
       {/* Animated background blur effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
+        <div
           className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-30 blur-3xl"
           style={{ background: '#00ff99' }}
         ></div>
-        <div 
+        <div
           className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl"
           style={{ background: '#004433' }}
         ></div>
@@ -90,9 +90,9 @@ export default function Categories() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm font-semibold backdrop-blur-sm">
-              Our Expertise
+          <div className="inline-block mb-4 animate-float">
+            <span className="px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+            Our Expertise
             </span>
           </div>
           <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6 font-serif">Product Categories</h2>

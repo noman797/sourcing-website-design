@@ -70,14 +70,16 @@ export default function ContactSection() {
           animation-delay: 1s;
         }
       `}</style>
-      
+
       <section id="contact" className="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-          <div className="absolute bottom-40 right-1/4 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(ellipse at center top, #00cc88 0%, #009966 40%, #006644 100%)'
+        }}>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-10 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+          <div className="absolute bottom-40 right-1/4 w-72 h-72 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-10 animate-blob animation-delay-1000"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -145,7 +147,7 @@ export default function ContactSection() {
                   ></textarea>
                 </div>
 
-                <button 
+                <button
                   onClick={handleSubmit}
                   className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
                 >
@@ -193,7 +195,7 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1">Phone</h4>
                       <a href="tel:+8801788683039" className="text-green-600 hover:text-green-700 font-semibold">
-                        +880 1788-683039 
+                        +880 1788-683039
                       </a>
                     </div>
                   </div>
@@ -206,7 +208,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1">Address</h4>
-                      <p className="text-gray-700 font-semibold">Dhaka, Bangladesh</p>
+                      <p className="text-gray-700 font-semibold">House no: 7, Road no: 7, BLOCK D, Aftabnagar, Dhaka 1212, Bangladesh. </p>
                     </div>
                   </div>
                 </div>

@@ -34,15 +34,6 @@ export default function FloatingContactBadge() {
         </button>
 
         {/* Email Button */}
-        <button
-          onClick={handleEmail}
-          className="group flex items-center gap-3 bg-white hover:bg-emerald-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pr-5 pl-4 py-3 border border-gray-200 cursor-pointer"
-        >
-          <div className="bg-emerald-600 p-2 rounded-full">
-            <Mail className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-sm font-medium text-gray-900">Email</span>
-        </button>
       </div>
       )}
 
@@ -61,7 +52,7 @@ export default function FloatingContactBadge() {
         ) : (
           <>
             <MessageCircle className="w-5 h-5" />
-            <span className="font-semibold">Contact</span>
+            <span className="font-semibold">Quick Contact</span>
           </>
         )}
       </button>

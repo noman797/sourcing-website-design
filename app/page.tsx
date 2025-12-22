@@ -34,9 +34,8 @@ export default function Page() {
       <SustainabilitySection />
       <QualityCommitmentSection />
       <StatsSection />
-      <ContactSection />
-      <CTA />
       <PartnershipSection />
+      <ContactSection />
       <Footer />
       <FloatingContactBadge />
     </>

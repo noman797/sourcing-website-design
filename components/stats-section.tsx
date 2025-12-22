@@ -141,7 +141,7 @@ export default function StatsSection() {
   }, [])
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-green-700 text-white relative overflow-hidden">
+    <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-green-700 text-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>

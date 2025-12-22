@@ -6,10 +6,10 @@ const steps = [
   { step: 2, icon: Target, title: "Factory Selection", description: "Finding the best match" },
   { step: 3, icon: Package, title: "Costing", description: "Competitive pricing" },
   { step: 4, icon: Package, title: "Sampling", description: "Product development" },
-  { step: 5, icon: CheckCircle2, title: "Order Confirmation", description: "Finalize specifications" },
-  { step: 6, icon: Zap, title: "Production", description: "Quality monitoring" },
-  { step: 7, icon: Microscope, title: "Inspection", description: "Final QC check" },
   { step: 8, icon: Truck, title: "Shipment", description: "Logistics coordination" },
+  { step: 7, icon: Microscope, title: "Inspection", description: "Final QC check" },
+  { step: 6, icon: Zap, title: "Production", description: "Quality monitoring" },
+  { step: 5, icon: CheckCircle2, title: "Order Confirmation", description: "Finalize specifications" },
 ]
 
 export default function ProcessTimeline() {
@@ -66,11 +66,11 @@ export default function ProcessTimeline() {
         ></div>
       </div>
       
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 rounded-full text-sm font-semibold" style={{ backgroundColor: '#009966', color: 'white' }}>
-              Our Journey
+              How we work
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 font-serif">Our Process Flow</h2>
@@ -79,80 +79,68 @@ export default function ProcessTimeline() {
           </p>
         </div>
 
-        {/* Central Timeline */}
+        {/* Circular Flow Design */}
         <div className="relative">
-          {/* Central vertical line */}
-          <div 
-            className="absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 hidden lg:block rounded-full"
-            style={{ background: 'linear-gradient(180deg, #009966 0%, #00cc88 50%, #009966 100%)' }}
-          ></div>
+          {/* Connection lines - curved paths between circles */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" style={{ zIndex: 1 }}>
+            <defs>
+              <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="12" refY="4" orient="auto">
+                <polygon points="0 0, 14 4, 0 8" fill="#009966" />
+              </marker>
+            </defs>
+            {/* Draw connecting paths - 1→2→3→4 (top row, left to right) */}
+            <path d="M 180 100 Q 300 80, 420 100" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
+            <path d="M 580 100 Q 700 80, 820 100" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
+            
+            {/* 4→5 (right side going down) */}
+            <path d="M 950 180 Q 970 300, 950 420" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
+            
+            {/* 5→6→7→8 (bottom row, right to left) */}
+            <path d="M 820 500 Q 700 520, 580 500" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
+            <path d="M 420 500 Q 300 520, 180 500" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
+          </svg>
 
-          {/* Steps */}
-          <div className="space-y-8">
-            {steps.map((item, idx) => (
-              <div key={idx} className="relative">
-                {/* Step container */}
-                <div className={`flex items-center gap-6 ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                  
-                  {/* Content Box */}
-                  <div className={`flex-1 ${idx % 2 === 0 ? 'lg:text-right lg:pr-6' : 'lg:text-left lg:pl-6'}`}>
-                    <div className="inline-block">
-                      <div 
-                        className="backdrop-blur-xl border border-gray-200 rounded-xl p-5 hover:border-green-300 transition-all duration-300 hover:shadow-xl hover:scale-105 group max-w-sm"
-                        style={{ backgroundColor: '#009966' }}
-                      >
-                        <div className={`flex items-center gap-4 ${idx % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
-                          {/* Icon */}
-                          <div className="flex-shrink-0">
-                            <div 
-                              className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-300 shadow-lg"
-                              style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
-                            >
-                              <item.icon className="text-white" size={20} />
-                            </div>
-                          </div>
-
-                          {/* Text Content */}
-                          <div className={`flex-1 ${idx % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                            <h3 className="text-base font-bold text-white mb-1 transition-colors duration-300">{item.title}</h3>
-                            <p className="text-white text-sm">{item.description}</p>
-                          </div>
-                        </div>
+          {/* Steps in circular layout */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-8 lg:gap-12 relative" style={{ zIndex: 10 }}>
+            {steps.map((item, idx) => {
+              const color = '#009966'
+              
+              return (
+                <div key={idx} className="flex flex-col items-center text-center group">
+                  {/* Circular bubble */}
+                  <div className="relative mb-4">
+                    {/* Outer glow effect */}
+                    <div 
+                      className="absolute inset-0 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                      style={{ backgroundColor: color }}
+                    ></div>
+                    
+                    {/* Main circle */}
+                    <div 
+                      className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full flex flex-col items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 border-4 border-white"
+                      style={{ backgroundColor: color }}
+                    >
+                      <item.icon className="text-white mb-2" size={32} strokeWidth={2} />
+                      
+                      {/* Step number badge */}
+                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center border-2" style={{ borderColor: color }}>
+                        <span className="text-xs font-bold" style={{ color: color }}>{item.step}</span>
                       </div>
                     </div>
                   </div>
-
-                  {/* Center number badge */}
-                  <div className="hidden lg:block flex-shrink-0 relative z-20">
-                    <div 
-                      className="w-12 h-12 rounded-full flex items-center justify-center border-4 shadow-xl hover:scale-110 transition-transform duration-300"
-                      style={{ 
-                        background: 'linear-gradient(135deg, #009966 0%, #00cc88 100%)',
-                        borderColor: '#B3FFE6'
-                      }}
-                    >
-                      <span className="text-white font-bold text-base">{String(item.step).padStart(2, '0')}</span>
-                    </div>
+                  
+                  {/* Title and description below circle */}
+                  <div className="max-w-[140px]">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 group-hover:text-green-700 transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-tight">
+                      {item.description}
+                    </p>
                   </div>
-
-                  {/* Mobile number badge */}
-                  <div className="lg:hidden absolute -left-3 top-0">
-                    <div 
-                      className="w-10 h-10 rounded-full flex items-center justify-center border-4 shadow-lg"
-                      style={{ 
-                        background: 'linear-gradient(135deg, #009966 0%, #00cc88 100%)',
-                        borderColor: '#B3FFE6'
-                      }}
-                    >
-                      <span className="text-white font-bold text-sm">{String(item.step).padStart(2, '0')}</span>
-                    </div>
-                  </div>
-
-                  {/* Spacer for alignment */}
-                  <div className="flex-1 hidden lg:block"></div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 

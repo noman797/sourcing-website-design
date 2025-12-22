@@ -46,7 +46,7 @@ export default function Hero() {
         {/* Trust badge */}
         <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
           <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-          <span className="text-sm font-medium text-white">Trusted by 500+ Global Brands</span>
+          <span className="text-sm font-medium text-white">Trusted by Global Brands</span>
         </div>
 
         {/* Main headline - serif font for elegance */}

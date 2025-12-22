@@ -122,11 +122,11 @@ export default function WhyChooseUs() {
         <div className="text-center mb-8">
           <div className={`inline-block mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
             <span className="px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-              Why Choose Us
+              Your Trusted Sourcing Partner
             </span>
           </div>
           <h2 className={`text-4xl sm:text-5xl font-bold text-white mb-4 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-            Your Trusted Sourcing Partner
+            Why Choose Us
           </h2>
           <p className={`text-lg text-white max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
             We deliver excellence through expertise, reliability, and commitment to your success
