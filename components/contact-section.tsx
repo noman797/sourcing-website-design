@@ -183,7 +183,7 @@ export default function ContactSection() {
                 <button
                   onClick={handleSubmit}
                   disabled={status === 'sending'}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   <MessageSquare size={20} />
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
