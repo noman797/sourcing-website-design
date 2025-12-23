@@ -1,8 +1,9 @@
 "use client"
-import { MessageSquare, Package, Microscope, CheckCircle2, Zap, Target, Truck } from "lucide-react"
+import { MessageSquare, Package, Microscope, CheckCircle2, Zap, Target, Truck, ClipboardCheck } from "lucide-react"
 
-const steps = [
-  { step: 1, icon: MessageSquare, title: "Buyer Brief", description: "Understanding requirements" },
+// Desktop view - original names
+const desktopSteps = [
+{ step: 1, icon: MessageSquare, title: "Buyer Brief", description: "Understanding requirements" },
   { step: 2, icon: Target, title: "Factory Selection", description: "Finding the best match" },
   { step: 3, icon: Package, title: "Costing", description: "Competitive pricing" },
   { step: 4, icon: Package, title: "Sampling", description: "Product development" },
@@ -10,6 +11,18 @@ const steps = [
   { step: 7, icon: Microscope, title: "Inspection", description: "Final QC check" },
   { step: 6, icon: Zap, title: "Production", description: "Quality monitoring" },
   { step: 5, icon: CheckCircle2, title: "Order Confirmation", description: "Finalize specifications" },
+]
+
+// Mobile view - different names
+const mobileSteps = [
+  { step: 1, icon: MessageSquare, title: "Brief", description: "Client requirements" },
+  { step: 2, icon: Target, title: "Sourcing", description: "Factory matching" },
+  { step: 3, icon: Package, title: "Quote", description: "Price calculation" },
+  { step: 4, icon: ClipboardCheck, title: "Sample", description: "Product prototype" },
+  { step: 5, icon: CheckCircle2, title: "Confirm", description: "Order finalization" },
+  { step: 6, icon: Zap, title: "Produce", description: "Manufacturing" },
+  { step: 7, icon: Microscope, title: "QC Check", description: "Quality control" },
+  { step: 8, icon: Truck, title: "Ship", description: "Delivery" },
 ]
 
 export default function ProcessTimeline() {
@@ -61,10 +74,10 @@ export default function ProcessTimeline() {
           </p>
         </div>
 
-        {/* Circular Flow Design */}
-        <div className="relative">
+        {/* DESKTOP VIEW - Hidden on mobile */}
+        <div className="relative hidden lg:block">
           {/* Connection lines - curved paths between circles */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" style={{ zIndex: 1 }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <defs>
               <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="12" refY="4" orient="auto">
                 <polygon points="0 0, 14 4, 0 8" fill="#009966" />
@@ -88,8 +101,8 @@ export default function ProcessTimeline() {
           </svg>
 
           {/* Steps in circular layout */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-8 lg:gap-12 relative" style={{ zIndex: 10 }}>
-            {steps.map((item, idx) => {
+          <div className="grid grid-cols-4 gap-12 relative" style={{ zIndex: 10 }}>
+            {desktopSteps.map((item, idx) => {
               const color = '#009966'
               
               return (
@@ -104,7 +117,7 @@ export default function ProcessTimeline() {
                     
                     {/* Main circle */}
                     <div 
-                      className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full flex flex-col items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 border-4 border-white"
+                      className="relative w-32 h-32 rounded-full flex flex-col items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 border-4 border-white"
                       style={{ backgroundColor: color }}
                     >
                       <item.icon className="text-white mb-2" size={32} strokeWidth={2} />
@@ -118,10 +131,55 @@ export default function ProcessTimeline() {
                   
                   {/* Title and description below circle */}
                   <div className="max-w-[140px]">
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 group-hover:text-green-700 transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-green-700 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-tight">
+                    <p className="text-sm text-gray-600 leading-tight">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* MOBILE VIEW - Hidden on desktop */}
+        <div className="relative lg:hidden">
+          <div className="grid grid-cols-2 gap-8 sm:gap-10 relative" style={{ zIndex: 10 }}>
+            {mobileSteps.map((item, idx) => {
+              const color = '#009966'
+              
+              return (
+                <div key={idx} className="flex flex-col items-center text-center group">
+                  {/* Circular bubble */}
+                  <div className="relative mb-3">
+                    {/* Outer glow effect */}
+                    <div 
+                      className="absolute inset-0 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                      style={{ backgroundColor: color }}
+                    ></div>
+                    
+                    {/* Main circle */}
+                    <div 
+                      className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full flex flex-col items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 border-4 border-white"
+                      style={{ backgroundColor: color }}
+                    >
+                      <item.icon className="text-white mb-1" size={28} strokeWidth={2} />
+                      
+                      {/* Step number badge */}
+                      <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white shadow-lg flex items-center justify-center border-2" style={{ borderColor: color }}>
+                        <span className="text-xs font-bold" style={{ color: color }}>{item.step}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Title and description below circle */}
+                  <div className="max-w-[130px]">
+                    <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-1 group-hover:text-green-700 transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-tight">
                       {item.description}
                     </p>
                   </div>
@@ -140,7 +198,7 @@ export default function ProcessTimeline() {
               borderColor: '#007a52'
             }}
           >
-            <p className="text-white font-semibold text-base">
+            <p className="text-white font-semibold text-sm sm:text-base">
               Every step is handled with precision to ensure quality and compliance
             </p>
           </div>
