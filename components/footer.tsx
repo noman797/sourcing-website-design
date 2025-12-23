@@ -4,9 +4,9 @@ import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react"
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#B3FFE6' }} className="text-gray-800 py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Footer Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {/* About */}
           <div>
             <div className="mb-4">
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:ml-32">
             <h4 className="font-semibold mb-4 text-gray-900">Company</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
@@ -60,20 +60,20 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-gray-900">Contact</h4>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2">
-                <Mail size={16} className="text-green-600" />
+                <Mail size={16} className="text-green-600 flex-shrink-0" />
                 <a href="mailto:info@thirdeyesourcing.com" className="hover:text-green-600 transition">
                   Info@thirdeyeaourcing.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={16} className="text-green-600" />
+                <Phone size={16} className="text-green-600 flex-shrink-0" />
                 <a href="tel:+880 1788-683039 " className="hover:text-green-600 transition">
                   +880 1788-683039
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin size={16} className="text-green-600" />
-                <span>House no: 7, Road no: 7, BLOCK D, Aftabnagar, Dhaka 1212, Bangladesh. </span>
+              <li className="flex items-start gap-2">
+                <MapPin size={16} className="text-green-600 flex-shrink-0 mt-0.5" />
+                <span>House no: 7, Road no: 7, BLOCK D, Aftabnagar, Dhaka 1212, Bangladesh.</span>
               </li>
             </ul>
 
