@@ -17,53 +17,35 @@ export default function ProcessTimeline() {
     <section
       id="process"
       className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-      style={{ backgroundColor: '#B3FFE6' }}
+      style={{ backgroundColor: '#98ccb0' }}
     >
-      {/* Animated background effects */}
+      {/* Animated blob background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <style>{`
-          @keyframes float {
+          @keyframes blob {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -30px) scale(1.1); }
+            25% { transform: translate(20px, -30px) scale(1.1); }
             50% { transform: translate(-20px, 20px) scale(0.9); }
-            75% { transform: translate(40px, 10px) scale(1.05); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
           }
-          @keyframes float-reverse {
-            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            25% { transform: translate(-40px, 30px) scale(1.15) rotate(90deg); }
-            50% { transform: translate(30px, -20px) scale(0.85) rotate(180deg); }
-            75% { transform: translate(-30px, -40px) scale(1.1) rotate(270deg); }
+          .animate-blob {
+            animation: blob 7s ease-in-out infinite;
           }
-          @keyframes drift {
-            0%, 100% { transform: translate(0, 0); }
-            33% { transform: translate(50px, -50px); }
-            66% { transform: translate(-30px, 30px); }
+          .animation-delay-1000 {
+            animation-delay: 1s;
           }
-          .animate-float { animation: float 20s ease-in-out infinite; }
-          .animate-float-reverse { animation: float-reverse 25s ease-in-out infinite; }
-          .animate-drift { animation: drift 15s ease-in-out infinite; }
+          .animation-delay-2000 {
+            animation-delay: 2s;
+          }
+          .animation-delay-4000 {
+            animation-delay: 4s;
+          }
         `}</style>
         
-        <div 
-          className="absolute top-1/4 right-10 w-80 h-80 rounded-full opacity-20 blur-3xl animate-float"
-          style={{ background: 'radial-gradient(circle, #99FFDD 0%, #66FFD1 100%)' }}
-        ></div>
-        <div 
-          className="absolute bottom-1/4 left-10 w-96 h-96 rounded-full opacity-15 blur-3xl animate-float-reverse"
-          style={{ background: 'radial-gradient(circle, #80FFCC 0%, #4DFFBB 100%)' }}
-        ></div>
-        <div 
-          className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full opacity-10 blur-3xl animate-drift"
-          style={{ background: 'radial-gradient(circle, #99FFDD 0%, #00cc88 100%)' }}
-        ></div>
-        <div 
-          className="absolute top-10 left-1/4 w-64 h-64 rounded-full opacity-15 blur-2xl animate-pulse"
-          style={{ background: '#66FFD1', animationDuration: '7s' }}
-        ></div>
-        <div 
-          className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full opacity-10 blur-3xl animate-float"
-          style={{ background: 'radial-gradient(circle, #4DFFBB 0%, #009966 100%)', animationDelay: '3s' }}
-        ></div>
+        <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-10 left-1/2 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-20 right-1/3 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
       </div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -89,8 +71,13 @@ export default function ProcessTimeline() {
               </marker>
             </defs>
             {/* Draw connecting paths - 1→2→3→4 (top row, left to right) */}
-            <path d="M 180 100 Q 300 80, 420 100" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
-            <path d="M 580 100 Q 700 80, 820 100" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />
+            <path d="M 165 85 Q 250 30, 335 85" stroke="#009966" strokeWidth="3.5" fill="none" markerEnd="url(#arrowhead)" strokeDasharray="10,5" />
+            
+            {/* 2→3 Factory Selection to Costing */}
+            <path d="M 465 85 Q 550 30, 635 85" stroke="#009966" strokeWidth="3.5" fill="none" markerEnd="url(#arrowhead)" strokeDasharray="10,5" />
+            
+            {/* 3→4 Costing to Sampling */}
+            <path d="M 765 85 Q 850 30, 935 85" stroke="#009966" strokeWidth="3.5" fill="none" markerEnd="url(#arrowhead)" strokeDasharray="10,5" />
             
             {/* 4→5 (right side going down) */}
             <path d="M 950 180 Q 970 300, 950 420" stroke="#009966" strokeWidth="4" fill="none" markerEnd="url(#arrowhead)" opacity="0.8" strokeDasharray="8,6" />

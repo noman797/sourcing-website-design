@@ -1,6 +1,7 @@
 "use client"
 import { Mail, Phone, MapPin, MessageSquare } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { init, send } from "@emailjs/browser"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -10,13 +11,45 @@ export default function ContactSection() {
     message: ''
   })
 
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+
+  // Direct EmailJS IDs (correct mapping)
+  const serviceId= 'service_p577208'
+  const templateId = 'template_wypmwcs'
+  const publicKey= '7KPg5WMZ9X7t0xHUD'
+
+  useEffect(() => {
+    if (publicKey) init(publicKey)
+  }, [publicKey])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Add your form submission logic here
+
+    if (!serviceId || !templateId) {
+      alert('EmailJS service/template IDs are not configured. Set NEXT_PUBLIC_EMAILJS_SERVICE_ID and NEXT_PUBLIC_EMAILJS_TEMPLATE_ID.')
+      return
+    }
+
+    setStatus('sending')
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      company: formData.company,
+      message: formData.message,
+    }
+
+    try {
+      await send(serviceId, templateId, templateParams, publicKey || undefined)
+      setStatus('success')
+      setFormData({ name: '', email: '', company: '', message: '' })
+    } catch (err) {
+      console.error('EmailJS error', err)
+      setStatus('error')
+    }
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -71,7 +104,7 @@ export default function ContactSection() {
         }
       `}</style>
 
-      <section id="contact" className="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section id="contact" className="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-24">
         {/* Animated Background */}
         <div className="absolute inset-0" style={{
           background: 'radial-gradient(ellipse at center top, #00cc88 0%, #009966 40%, #006644 100%)'
@@ -149,11 +182,20 @@ export default function ContactSection() {
 
                 <button
                   onClick={handleSubmit}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={status === 'sending'}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   <MessageSquare size={20} />
-                  Send Message
+                  {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {status === 'success' && (
+                  <p className="mt-2 text-sm text-green-700 font-medium">Message sent — we will contact you soon.</p>
+                )}
+
+                {status === 'error' && (
+                  <p className="mt-2 text-sm text-red-600 font-medium">Failed to send message. Please try again later.</p>
+                )}
               </div>
             </div>
 

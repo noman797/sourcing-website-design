@@ -87,7 +87,7 @@ export default function Strengths() {
         }
       `}</style>
       
-      <section id="strength" className="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section id="strength" className="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-24">
         {/* Animated Background Blobs */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50">
           <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>

@@ -64,7 +64,7 @@ export default function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden"
+      className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden scroll-mt-24"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

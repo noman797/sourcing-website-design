@@ -70,7 +70,7 @@ export default function Categories() {
   return (
     <section
       id="products"
-      className="py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden scroll-mt-24"
       style={{
         background: 'radial-gradient(ellipse at center top, #00cc88 0%, #009966 40%, #006644 100%)'
       }}
