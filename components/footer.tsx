@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react"
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#B3FFE6' }} className="text-gray-800 py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Footer Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {/* About */}
