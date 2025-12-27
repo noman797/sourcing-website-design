@@ -102,7 +102,7 @@ export default function FactoryNetwork() {
                 }}
               >
                 <div className="relative z-10">
-                  <div className="text-3xl mb-2 transition-all duration-300">{category.icon}</div>
+                  <div className="text-5xl mb-2 transition-all duration-300">{category.icon}</div>
                   <h3 className="text-sm font-bold text-white mb-1.5 transition-colors duration-300">{category.name}</h3>
                   <div className="text-2xl font-bold mb-0.5 transition-all duration-300 text-white">{category.count}</div>
                   <p className="text-xs text-white transition-colors duration-300">partner factories</p>

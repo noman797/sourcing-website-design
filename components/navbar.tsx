@@ -11,7 +11,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
           <div className="flex items-center">
-            <img src="/images/image.png" alt="Third Eye Sourcing" className="h-16 w-auto" />
+            <a href="#" className="cursor-pointer">
+              <img src="/images/image.png" alt="Third Eye Sourcing" className="h-16 w-auto" />
+            </a>
           </div>
 
           <div className="hidden md:flex items-center gap-8">

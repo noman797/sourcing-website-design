@@ -22,6 +22,11 @@ export default function ContactSection() {
     if (publicKey) init(publicKey)
   }, [publicKey])
 
+  const isFormValid = formData.name.trim() !== '' && 
+                       formData.email.trim() !== '' && 
+                       formData.company.trim() !== '' && 
+                       formData.message.trim() !== ''
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -115,7 +120,7 @@ export default function ContactSection() {
           <div className="absolute bottom-40 right-1/4 w-72 h-72 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-10 animate-blob animation-delay-1000"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-8">
             <div className="inline-block mb-4 animate-float">
               <span className="px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
@@ -128,62 +133,66 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Contact Form */}
-            <div className="bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm p-8 rounded-2xl border border-gray-200 shadow-lg">
-              <div className="space-y-6">
+            <div className="bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm p-8 rounded-2xl border border-gray-200 shadow-lg flex flex-col">
+              <div className="space-y-6 flex-grow flex flex-col justify-center">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">Full Name</label>
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">Full Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition bg-white/90"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">Email</label>
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">Email *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition bg-white/90"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">Company</label>
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">Company *</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition bg-white/90"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-900 mb-2">Message</label>
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">Message *</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your sourcing needs..."
-                    rows={4}
+                    rows={6}
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition resize-none bg-white/90"
                   ></textarea>
                 </div>
 
                 <button
                   onClick={handleSubmit}
-                  disabled={status === 'sending'}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
+                  disabled={status === 'sending' || !isFormValid}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <MessageSquare size={20} />
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
@@ -200,7 +209,7 @@ export default function ContactSection() {
             </div>
 
             {/* Map and Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-8 flex flex-col">
               <div className="rounded-2xl overflow-hidden shadow-lg h-80 bg-gray-100 relative transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="/flag.jpg"

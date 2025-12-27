@@ -3,36 +3,6 @@
 import { CheckCircle, Users, Target, Shield, FileCheck } from "lucide-react"
 
 export default function QualityCommitmentSection() {
-  const qualityPoints = [
-    {
-      icon: Shield,
-      title: "Factory Audits",
-      description:
-        "Comprehensive audits of all manufacturing facilities to ensure compliance with international standards",
-    },
-    {
-      icon: Users,
-      title: "QC Team Training",
-      description: "Regular training programs for quality control teams to maintain excellence and consistency",
-    },
-    {
-      icon: CheckCircle,
-      title: "Zero Tolerance Policy",
-      description: "Strict adherence to zero tolerance for non-compliance and quality deviations",
-    },
-    {
-      icon: Target,
-      title: "AQL System",
-      description: "Acceptance Quality Level (AQL) based quality system for precise quality measurement",
-    },
-    {
-      icon: FileCheck,
-      title: "Third-Party Inspection Support",
-      description:
-        "We support and facilitate independent third-party inspections to provide transparency and assurance to all our partners",
-    },
-  ]
-
   return (
     <section className="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <style jsx global>{`
@@ -129,38 +99,149 @@ export default function QualityCommitmentSection() {
         </div>
 
         {/* Quality Points Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {qualityPoints.map((point, idx) => {
-            const Icon = point.icon
-            return (
-              <div
-                key={idx}
-                className="relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
-                style={{
-                  background: '#009966',
-                  animation: 'float-card 6s ease-in-out infinite',
-                  animationDelay: `${idx * 0.2}s`
-                }}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          {/* First Row - Three boxes, each taking 4 columns */}
+          
+          {/* Factory Audits */}
+          <div
+            className="md:col-span-4 relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
+            style={{
+              background: '#009966',
+              animation: 'float-card 6s ease-in-out infinite',
+              animationDelay: '0s'
+            }}
+          >
+            <div className="flex-shrink-0 relative z-10">
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
               >
-                <div className="flex-shrink-0 relative z-10">
-                  <div 
-                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
-                    style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
-                  >
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1 relative z-10">
-                  <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
-                    {point.title}
-                  </h3>
-                  <p className="text-white transition-colors text-xs leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
+                <Shield className="w-5 h-5 text-white" />
               </div>
-            )
-          })}
+            </div>
+            <div className="flex-1 relative z-10">
+              <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
+                Factory Audits
+              </h3>
+              <p className="text-white transition-colors text-xs leading-relaxed">
+                Comprehensive audits of all manufacturing facilities to ensure compliance with international standards
+              </p>
+            </div>
+          </div>
+
+          {/* QC Team Training */}
+          <div
+            className="md:col-span-4 relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
+            style={{
+              background: '#009966',
+              animation: 'float-card 6s ease-in-out infinite',
+              animationDelay: '0.2s'
+            }}
+          >
+            <div className="flex-shrink-0 relative z-10">
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
+              >
+                <Users className="w-5 h-5 text-white" />
+              </div>
+            </div>
+            <div className="flex-1 relative z-10">
+              <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
+                QC Team Training
+              </h3>
+              <p className="text-white transition-colors text-xs leading-relaxed">
+                Regular training programs for quality control teams to maintain excellence and consistency
+              </p>
+            </div>
+          </div>
+
+          {/* Zero Tolerance Policy */}
+          <div
+            className="md:col-span-4 relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
+            style={{
+              background: '#009966',
+              animation: 'float-card 6s ease-in-out infinite',
+              animationDelay: '0.4s'
+            }}
+          >
+            <div className="flex-shrink-0 relative z-10">
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
+              >
+                <CheckCircle className="w-5 h-5 text-white" />
+              </div>
+            </div>
+            <div className="flex-1 relative z-10">
+              <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
+                Zero Tolerance Policy
+              </h3>
+              <p className="text-white transition-colors text-xs leading-relaxed">
+                Strict adherence to zero tolerance for non-compliance and quality deviations
+              </p>
+            </div>
+          </div>
+
+          {/* Second Row - Blank div (2 columns) */}
+          <div className="md:col-span-2"></div>
+
+          {/* AQL System (4 columns) */}
+          <div
+            className="md:col-span-4 relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
+            style={{
+              background: '#009966',
+              animation: 'float-card 6s ease-in-out infinite',
+              animationDelay: '0.6s'
+            }}
+          >
+            <div className="flex-shrink-0 relative z-10">
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
+              >
+                <Target className="w-5 h-5 text-white" />
+              </div>
+            </div>
+            <div className="flex-1 relative z-10">
+              <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
+                AQL System
+              </h3>
+              <p className="text-white transition-colors text-xs leading-relaxed">
+                Acceptance Quality Level (AQL) based quality system for precise quality measurement
+              </p>
+            </div>
+          </div>
+
+          {/* Third-Party Inspection Support (4 columns) */}
+          <div
+            className="md:col-span-4 relative flex gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-green-300 hover:scale-105 hover:-translate-y-2 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer"
+            style={{
+              background: '#009966',
+              animation: 'float-card 6s ease-in-out infinite',
+              animationDelay: '0.8s'
+            }}
+          >
+            <div className="flex-shrink-0 relative z-10">
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #007a52 0%, #009966 100%)' }}
+              >
+                <FileCheck className="w-5 h-5 text-white" />
+              </div>
+            </div>
+            <div className="flex-1 relative z-10">
+              <h3 className="text-sm font-bold text-white mb-1.5 transition-colors">
+                Third-Party Inspection Support
+              </h3>
+              <p className="text-white transition-colors text-xs leading-relaxed">
+                We support and facilitate independent third-party inspections to provide transparency and assurance to all our partners
+              </p>
+            </div>
+          </div>
+
+          {/* Second Row - Blank div (2 columns) */}
+          <div className="md:col-span-2"></div>
         </div>
       </div>
     </section>

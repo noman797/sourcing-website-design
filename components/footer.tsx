@@ -10,14 +10,21 @@ export default function Footer() {
           {/* About */}
           <div>
             <div className="mb-4">
-              <img src="/images/image.png" alt="Third Eye Sourcing" className="h-20 w-auto" />
+              <a href="#" className="cursor-pointer inline-block">
+                <img src="/images/image.png" alt="Third Eye Sourcing" className="h-20 w-auto" />
+              </a>
             </div>
             <p className="text-gray-600 text-sm leading-snug tracking-tight">
               Delivering world-class Product Sourcing, Development, and Quality Assurance for global buyers in hard goods,
               textiles, and lifestyle products.
             </p>
 
-            <div className="mt-4 flex items-center gap-3 bg-white/70 border border-emerald-200 p-2.5 rounded-lg shadow-sm">
+            <a 
+              href="https://youtu.be/QNUSIOMb6vI?si=34O3RMxi-balzhg0" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center gap-3 bg-white/70 border border-emerald-200 p-2.5 rounded-lg shadow-sm hover:bg-white hover:shadow-md transition-all cursor-pointer"
+            >
               <div className="w-12 h-8 rounded overflow-hidden shadow-md flex-shrink-0">
                 <svg viewBox="0 0 120 72" className="w-full h-full">
                   <rect width="120" height="72" fill="#006a4e" />
@@ -25,7 +32,7 @@ export default function Footer() {
                 </svg>
               </div>
               <span className="text-sm font-medium text-gray-700">Made in Bangladesh</span>
-            </div>
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -80,14 +87,14 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-3 mt-4">
               <a
-                href="#"
+                href="https://www.facebook.com/thirdeyesourcing/ "
                 style={{ backgroundColor: '#009966' }}
                 className="w-9 h-9 border border-emerald-300 hover:opacity-90 text-white rounded-full flex items-center justify-center transition shadow-sm"
               >
                 <Facebook size={16} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/third-eye-sourcing-ltd "
                 style={{ backgroundColor: '#009966' }}
                 className="w-9 h-9 border border-emerald-300 hover:opacity-90 text-white rounded-full flex items-center justify-center transition shadow-sm"
               >

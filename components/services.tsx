@@ -25,13 +25,28 @@ const services = [
   },
   {
     icon: Users,
-    title: "Client Support",
+    title: "Client-Specific Tasks",
     description: "Tailored support based on your specific requirements",
   },
   {
     icon: Truck,
     title: "Logistics Support",
     description: "End-to-end process management and delivery coordination",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Inspection",
+    description: "Pre-Shipment / Final Random Inspection – Independent and reliable assessment",
+  },
+  {
+    icon: Truck,
+    title: "Delivery Management",
+    description: "Regular monitoring and coordination ensure on time delivery",
+  },
+  {
+    icon: Shield,
+    title: "Credentials Support",
+    description: "We help buyer to verify factory document and other information",
   },
 ]
 
@@ -122,7 +137,7 @@ export default function Services() {
           <div className={`inline-block mb-4 px-4 py-2 bg-green-100 rounded-full transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
             <span className="text-green-700 font-semibold text-sm">Our Expertise</span>
           </div>
-          <h2 className={`text-4xl sm:text-5xl font-bold bg-gradient-to-r from-slate-900 via-green-800 to-slate-900 bg-clip-text text-transparent mb-4 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+          <h2 className={`text-5xl sm:text-6xl font-bold bg-gradient-to-r from-slate-900 via-green-800 to-slate-900 bg-clip-text text-transparent mb-4 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             Our Core Services
           </h2>
           <p className={`text-lg text-slate-600 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
