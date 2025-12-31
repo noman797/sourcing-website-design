@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* CTA */}
         <a
-          href="#contact"
+          href="#services"
           className="inline-flex items-center gap-2 px-8 py-3.5 bg-emerald-600 text-white rounded-full font-semibold shadow-lg hover:bg-emerald-700 transition-all duration-300"
         >
           Start Your Journey
