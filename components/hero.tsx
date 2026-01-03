@@ -39,15 +39,14 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
-      
+
       {/* Optimized rotating background images */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((img, i) => (
           <div
             key={img.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              i === index ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"
+              }`}
           >
             <Image
               src={img.src}
@@ -66,7 +65,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        
+
         {/* Trust badge */}
         <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
           <span className="w-2 h-2 bg-emerald-400 rounded-full" />
@@ -83,9 +82,7 @@ export default function Hero() {
 
         {/* SEO paragraph */}
         <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
-          A reliable Bangladesh sourcing company delivering product sourcing,
-          factory inspection, quality inspection, and compliance audit services
-          for global buyers.
+          Reliable Bangladesh-based sourcing and quality assurance—bridging the gap between global buyers and ethical, high-quality manufacturing.
         </p>
 
         {/* CTA */}

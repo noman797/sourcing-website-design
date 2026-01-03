@@ -105,9 +105,8 @@ export default function SustainabilitySection() {
             <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           </div>
-          <p className="relative z-10 text-center text-white text-lg md:text-xl font-semibold leading-relaxed">
-            Our commitment to sustainability is not just a practice—it's a promise to future generations and our valued
-            partners.
+          <p className="relative z-10 text-center text-white text-sm md:text-base font-semibold whitespace-nowrap overflow-hidden text-ellipsis px-4">
+            Our commitment to sustainability is not just a practice—it's a promise to future generations and our valued partners.
           </p>
         </div>
       </div>
