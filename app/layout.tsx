@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Third Eye Sourcing ",
+  title: "Third Eye Sourcing connects global buyers with reliable, compliant, and cost-efficient factories in Bangladesh.",
   description:
-    "World-class product sourcing, development, and quality assurance from Bangladesh. Connect with reliable factories and streamline your supply chain.",
+    "Delivering world-class Product Sourcing,Development, and Quality Assurance forglobal buyers in hard goods, textiles, and lifestyle products from Bangladesh.",
   generator: "v0.app",
   icons: {
     icon: [
