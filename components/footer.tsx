@@ -91,7 +91,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="text-green-600 flex-shrink-0 mt-0.5" />
                 <span>
-                  Aftabnagar, Dhaka 1212, Bangladesh
+                 House no: 7, Road no: 7, BLOCK D, Aftabnagar, Dhaka 1212, Bangladesh. 
                 </span>
               </li>
             </ul>
